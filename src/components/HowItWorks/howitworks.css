@@ -1,0 +1,494 @@
+/* ===== HOW IT WORKS - WARM ORANGE & COLORFUL 3D COVERFLOW SECTION ===== */
+.howitworks.warm-orange-bg {
+  position: relative;
+  padding: 75px 24px 95px;
+  background: linear-gradient(135deg, #ebdecd 0%, #ffedd5 50%, #eebc82 100%);
+  color: #0a1738;
+  z-index: 5;
+  overflow: hidden;
+}
+
+/* Background Watermark Text */
+.howitworks-watermark-container {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  white-space: nowrap;
+  opacity: 0.14;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.howitworks-watermark-text {
+  font-family: var(--font-heading);
+  font-size: 260px;
+  font-weight: 900;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  line-height: 0.8;
+  background: linear-gradient(180deg, #ea580c 0%, #9a3412 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.howitworks-watermark-sub {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 14px;
+  color: #c2410c;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+/* Ambient Glows */
+.howitworks-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.howitworks-bg-glow.glow-left {
+  top: 15%;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.2) 0%, transparent 70%);
+}
+
+.howitworks-bg-glow.glow-right {
+  bottom: 15%;
+  right: -100px;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(234, 88, 12, 0.2) 0%, transparent 70%);
+}
+
+.howitworks-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Header - BOLDER & BIGGER */
+.howitworks-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.howitworks-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffedd5;
+  padding: 10px 26px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #c2410c;
+  border: 2px solid rgba(194, 65, 12, 0.35);
+  box-shadow: 0 6px 18px rgba(194, 65, 12, 0.18);
+  text-transform: uppercase;
+}
+
+.howitworks-tagline-dot {
+  width: 10px;
+  height: 10px;
+  background: #c2410c;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(194, 65, 12, 1);
+}
+
+.howitworks-title {
+  font-family: var(--font-heading);
+  font-size: 52px;
+  /* BIGGER HEADER TITLE */
+  font-weight: 900;
+  color: #0a1738;
+  letter-spacing: -1.6px;
+  line-height: 1.12;
+}
+
+.howitworks-subtitle {
+  font-size: 19px;
+  /* BIGGER BOLD SUBTITLE */
+  color: #ea580c;
+  font-weight: 800;
+  line-height: 1.5;
+  max-width: 700px;
+}
+
+/* ===== 3D COVERFLOW STAGE WRAPPER ===== */
+.coverflow-stage-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0 10px;
+  margin: 0 auto;
+}
+
+/* Arrow Buttons */
+.coverflow-arrow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2.5px solid #fdba74;
+  color: #ea580c;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(234, 88, 12, 0.25);
+}
+
+.coverflow-arrow-btn:hover {
+  background: #ea580c;
+  border-color: #ea580c;
+  color: #ffffff;
+  transform: scale(1.12);
+  box-shadow: 0 12px 30px rgba(234, 88, 12, 0.45);
+}
+
+.arrow-prev {
+  position: absolute;
+  left: 20px;
+}
+
+.arrow-next {
+  position: absolute;
+  right: 20px;
+}
+
+/* 3D PERSPECTIVE DECK STAGE */
+.coverflow-deck-stage {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 530px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  margin: 0 auto;
+}
+
+/* ===== 3D COVERFLOW CARD - DEAD CENTER ANCHOR ===== */
+.coverflow-card {
+  position: absolute;
+  left: calc(50% - 165px);
+  top: calc(50% - 250px);
+  width: 330px;
+  height: 500px;
+  border-radius: 28px;
+  background: var(--card-bg-gradient);
+  border: 2.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 25px 60px rgba(10, 23, 56, 0.25);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  color: #ffffff;
+  transition:
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.55s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* INDIVIDUAL DISTINCT SOLID/GRADIENT COLOR THEMES */
+.coverflow-card.card-theme-orange {
+  background: linear-gradient(145deg, #ea580c 0%, #c2410c 100%);
+  border-color: #fdba74;
+}
+
+.coverflow-card.card-theme-green {
+  background: linear-gradient(145deg, #065f46 0%, #044e3a 100%);
+  border-color: #6ee7b7;
+}
+
+.coverflow-card.card-theme-navy {
+  background: linear-gradient(145deg, #0f172a 0%, #0a0f1d 100%);
+  border-color: #7dd3fc;
+}
+
+.coverflow-card.card-theme-purple {
+  background: linear-gradient(145deg, #6b21a8 0%, #581c87 100%);
+  border-color: #f0abfc;
+}
+
+/* SYMMETRIC 3D POSITIONING */
+.coverflow-card[style*="--card-offset: 0"] {
+  transform: translateX(0) rotateY(0deg) scale(1.18);
+  opacity: 1;
+  z-index: 60;
+}
+
+.coverflow-card[style*="--card-offset: -1"] {
+  transform: translateX(-240px) rotateY(38deg) scale(0.88);
+  opacity: 0.85;
+  z-index: 40;
+}
+
+.coverflow-card[style*="--card-offset: -2"] {
+  transform: translateX(-430px) rotateY(48deg) scale(0.72);
+  opacity: 0.5;
+  z-index: 30;
+}
+
+.coverflow-card[style*="--card-offset: -3"] {
+  transform: translateX(-580px) rotateY(58deg) scale(0.58);
+  opacity: 0.25;
+  z-index: 20;
+}
+
+.coverflow-card[style*="--card-offset: 1"] {
+  transform: translateX(240px) rotateY(-38deg) scale(0.88);
+  opacity: 0.85;
+  z-index: 40;
+}
+
+.coverflow-card[style*="--card-offset: 2"] {
+  transform: translateX(430px) rotateY(-48deg) scale(0.72);
+  opacity: 0.5;
+  z-index: 30;
+}
+
+.coverflow-card[style*="--card-offset: 3"] {
+  transform: translateX(580px) rotateY(-58deg) scale(0.58);
+  opacity: 0.25;
+  z-index: 20;
+}
+
+/* CENTER ACTIVE CARD */
+.coverflow-card.is-center-active {
+  box-shadow:
+    0 35px 90px rgba(10, 23, 56, 0.4),
+    0 0 45px rgba(255, 255, 255, 0.5);
+}
+
+/* STEP BADGE TAG - BIGGER & MUCH MORE BOLD ("STEP 01 make the more bold and bigger") */
+.coverflow-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  /* BIGGER PADDING */
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.65);
+  /* HIGH-CONTRAST DARK GLASS BADGE */
+  backdrop-filter: blur(14px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  font-size: 13.5px;
+  /* BIGGER & BOLDER TEXT */
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  z-index: 10;
+}
+
+/* VISUAL BANNER WRAPPER */
+.coverflow-img-banner {
+  position: relative;
+  width: 100%;
+  height: 65%;
+  background: #020617;
+  overflow: hidden;
+}
+
+.coverflow-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.coverflow-card.is-center-active .coverflow-img {
+  transform: scale(1.06);
+}
+
+.banner-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.65) 100%);
+}
+
+/* CARD CONTENT FOOTER */
+.coverflow-card-footer {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.footer-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.coverflow-card-title {
+  font-family: var(--font-heading);
+  font-size: 21.5px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.coverflow-step-num {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--card-accent, #ffffff);
+}
+
+.coverflow-card-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* SOLID WHITE BUTTON STUB */
+.coverflow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: var(--btn-bg-color, #ffffff);
+  color: var(--btn-text-color, #0a1738);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  margin-top: 4px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coverflow-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.coverflow-btn:active {
+  transform: scale(0.95);
+}
+
+/* BOTTOM DOTS INDICATOR */
+.coverflow-dots-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px auto 0;
+}
+
+.coverflow-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(194, 65, 12, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.coverflow-dot.active {
+  background: #ea580c;
+  box-shadow: 0 0 12px rgba(234, 88, 12, 0.8);
+  transform: scale(1.3);
+}
+
+/* ===== MOBILE RESPONSIVE FIT ===== */
+@media (max-width: 768px) {
+  .howitworks.warm-orange-bg {
+    padding: 50px 14px 70px;
+  }
+
+  .howitworks-title {
+    font-size: 32px;
+  }
+
+  .howitworks-subtitle {
+    font-size: 15px;
+  }
+
+  .coverflow-deck-stage {
+    height: 450px;
+  }
+
+  .coverflow-card {
+    width: 275px;
+    height: 440px;
+    left: calc(50% - 137.5px);
+    top: calc(50% - 220px);
+  }
+
+  .coverflow-badge {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+
+  .coverflow-arrow-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .arrow-prev {
+    left: 4px;
+  }
+
+  .arrow-next {
+    right: 4px;
+  }
+
+  .coverflow-card[style*="--card-offset: -1"] {
+    transform: translateX(-110px) rotateY(36deg) scale(0.82);
+  }
+
+  .coverflow-card[style*="--card-offset: 1"] {
+    transform: translateX(110px) rotateY(-36deg) scale(0.82);
+  }
+}

@@ -1,0 +1,490 @@
+/* ===== UNIFIED ORBITAL WHY CHOOSE SECTION WITH PINK, BLUE, OLIVE & ORANGE CARDS ===== */
+.whychoose-orbital-section {
+  position: relative;
+  padding: 85px 32px 100px;
+  background: #ffffff;
+  color: #0f172a;
+  z-index: 5;
+  overflow: hidden;
+}
+
+/* Background Pulse Rings */
+.orbital-pulse-ring {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1.5px dashed rgba(37, 99, 235, 0.18);
+  pointer-events: none;
+}
+
+.orbital-pulse-ring.ring-outer {
+  width: 920px;
+  height: 920px;
+  animation: pulseRotate 45s linear infinite;
+}
+
+.orbital-pulse-ring.ring-inner {
+  width: 600px;
+  height: 600px;
+  animation: pulseRotate 28s linear infinite reverse;
+}
+
+@keyframes pulseRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.whychoose-container {
+  max-width: 1380px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.whychoose-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  max-width: 800px;
+}
+
+.whychoose-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(37, 99, 235, 0.08);
+  padding: 8px 22px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+  color: #2563eb;
+  border: 1.5px solid rgba(37, 99, 235, 0.2);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+  text-transform: uppercase;
+}
+
+.whychoose-tagline-dot {
+  width: 9px;
+  height: 9px;
+  background: #2563eb;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.9);
+}
+
+.whychoose-title {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 900;
+  color: #0a1738;
+  letter-spacing: -1.4px;
+  line-height: 1.15;
+}
+
+.whychoose-subtitle {
+  font-size: 18px;
+  color: #475569;
+  font-weight: 600;
+  line-height: 1.6;
+  max-width: 680px;
+}
+
+/* ===== ORBITAL STAGE WRAPPER ===== */
+.orbital-stage-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1360px;
+  min-height: 600px;
+  margin-top: 10px;
+}
+
+/* CURVED ARROWS SVG CANVAS (VISIBLE ON ALL SCREENS) */
+.curved-arrows-svg-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 8;
+  display: block;
+}
+
+/* DEAD-CENTER LARGER STUDENT PORTRAIT BOX */
+.center-student-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 580px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 10;
+}
+
+.student-glow-backdrop {
+  position: absolute;
+  bottom: 0;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.18) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+.center-student-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 25px 50px rgba(10, 23, 56, 0.15));
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s ease;
+  mix-blend-mode: multiply;
+}
+
+.center-student-box:hover .center-student-img {
+  transform: scale(1.04);
+}
+
+.student-center-badge {
+  position: absolute;
+  bottom: -12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 11.5px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+  z-index: 5;
+}
+
+.sparkle {
+  color: #fef08a;
+}
+
+/* SLEEKER SMALL CARDS */
+.orbital-cards-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.orbital-card {
+  position: absolute;
+  width: 270px;
+  padding: 18px 18px;
+  border-radius: 20px;
+  box-shadow: 0 16px 35px rgba(10, 23, 56, 0.12);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 1. PINK CARD COLOR THEME */
+.orbital-card.card-pink {
+  background: linear-gradient(145deg, #db2777 0%, #be185d 100%);
+  border: 2px solid #fbcfe8;
+  box-shadow: 0 16px 35px rgba(219, 39, 119, 0.25);
+}
+
+.orbital-card.card-pink .card-title {
+  color: #fff0f6;
+}
+
+.orbital-card.card-pink .card-num {
+  color: #fbcfe8;
+}
+
+.orbital-card.card-pink .card-desc {
+  color: #fde8e8;
+}
+
+/* 2. BLUE CARD COLOR THEME */
+.orbital-card.card-blue {
+  background: linear-gradient(145deg, #2563eb 0%, #1d4ed8 100%);
+  border: 2px solid #bfdbfe;
+  box-shadow: 0 16px 35px rgba(37, 99, 235, 0.25);
+}
+
+.orbital-card.card-blue .card-title {
+  color: #eff6ff;
+}
+
+.orbital-card.card-blue .card-num {
+  color: #bfdbfe;
+}
+
+.orbital-card.card-blue .card-desc {
+  color: #dbeafe;
+}
+
+/* 3. OLIVE CARD COLOR THEME */
+.orbital-card.card-olive {
+  background: linear-gradient(145deg, #65a30d 0%, #4d7c0f 100%);
+  border: 2px solid #d9f99d;
+  box-shadow: 0 16px 35px rgba(101, 163, 13, 0.25);
+}
+
+.orbital-card.card-olive .card-title {
+  color: #f7fee7;
+}
+
+.orbital-card.card-olive .card-num {
+  color: #d9f99d;
+}
+
+.orbital-card.card-olive .card-desc {
+  color: #ecfccb;
+}
+
+/* 4. ORANGE CARD COLOR THEME */
+.orbital-card.card-orange {
+  background: linear-gradient(145deg, #ea580c 0%, #c2410c 100%);
+  border: 2px solid #fed7aa;
+  box-shadow: 0 16px 35px rgba(234, 88, 12, 0.25);
+}
+
+.orbital-card.card-orange .card-title {
+  color: #fff7ed;
+}
+
+.orbital-card.card-orange .card-num {
+  color: #fed7aa;
+}
+
+.orbital-card.card-orange .card-desc {
+  color: #ffedd5;
+}
+
+.orbital-card:hover {
+  transform: translateY(-8px) scale(1.05) !important;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
+  z-index: 30;
+}
+
+.card-icon-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-num {
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.card-desc {
+  font-size: 12.5px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* ZERO-OVERLAP CORNER CARD POSITIONS */
+.orbital-card.card-top-left {
+  top: 10px;
+  left: 0px;
+}
+
+.orbital-card.card-bottom-left {
+  bottom: 10px;
+  left: 0px;
+}
+
+.orbital-card.card-top-right {
+  top: 10px;
+  right: 0px;
+}
+
+.orbital-card.card-bottom-right {
+  bottom: 10px;
+  right: 0px;
+}
+
+/* ===== MOBILE RESPONSIVE ORBITAL STAGE (LARGER IMAGE, SMALLER CARDS, PROPER GAP & ARROWS) ===== */
+@media (max-width: 1024px) {
+  .whychoose-orbital-section {
+    padding: 40px 8px 50px;
+  }
+
+  .sparkle {
+    width: 1px;
+    height: 2px;
+    display: none;
+
+  }
+
+  .whychoose-title {
+    font-size: 26px;
+  }
+
+  .whychoose-subtitle {
+    font-size: 13.5px;
+  }
+
+  .orbital-stage-wrapper {
+    min-height: 520px;
+    margin-top: 5px;
+  }
+
+  /* Curved SVG Ray Canvas Visible on Mobile */
+  .curved-arrows-svg-canvas {
+    display: block;
+    opacity: 0.85;
+  }
+
+  /* Larger Student Image on Mobile */
+  .center-student-box {
+    width: 275px;
+    height: 340px;
+    top: 50%;
+    left: 50%;
+    border-radius: 16px;
+  }
+
+  .center-student-img {
+    border-radius: 70%;
+  }
+
+  .student-glow-backdrop {
+    width: 200px;
+    height: 200px;
+  }
+
+  .student-center-badge {
+    font-size: 9px;
+    padding: 4px 12px;
+    bottom: -10px;
+    white-space: nowrap;
+  }
+
+  /* Smaller Compact Micro Cards on Mobile with Proper Clearance/Gap */
+  .orbital-card {
+    width: 35vw;
+    max-width: 130px;
+    padding: 8px 8px;
+    border-radius: 12px;
+    gap: 3px;
+  }
+
+  .icon-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+  }
+
+  .icon-circle svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .card-num {
+    font-size: 8.5px;
+  }
+
+  .card-title {
+    font-size: 11px;
+    line-height: 1.15;
+  }
+
+  .card-desc {
+    font-size: 8.5px;
+    line-height: 1.25;
+  }
+
+  /* Extreme Corner Positions on Mobile to Ensure Proper Gap around Central Photo */
+  .orbital-card.card-top-left {
+    top: 0px;
+    left: 0px;
+  }
+
+  .orbital-card.card-bottom-left {
+    bottom: 0px;
+    left: 0px;
+  }
+
+  .orbital-card.card-top-right {
+    top: 0px;
+    right: 0px;
+  }
+
+  .orbital-card.card-bottom-right {
+    bottom: 0px;
+    right: 0px;
+  }
+
+  .orbital-pulse-ring.ring-outer {
+    width: 360px;
+    height: 360px;
+  }
+
+  .orbital-pulse-ring.ring-inner {
+    width: 230px;
+    height: 230px;
+  }
+}
+
+@media (max-width: 380px) {
+  .orbital-card {
+    width: 34vw;
+    max-width: 120px;
+    padding: 6px 6px;
+  }
+
+  .card-title {
+    font-size: 10px;
+  }
+
+  .card-desc {
+    font-size: 8px;
+  }
+
+  .center-student-box {
+    width: 210px;
+    height: 270px;
+  }
+}

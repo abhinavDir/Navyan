@@ -1,0 +1,228 @@
+/* ===== FUTURISTIC CYBER FOOTER ===== */
+.footer-section {
+  position: relative;
+  background: #080c14; /* Deep Slate Black */
+  color: #ffffff;
+  z-index: 5;
+  overflow: hidden;
+}
+
+/* 3D Curved Top Connector separating FAQ and Footer */
+.footer-section-connector {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  margin-top: -80px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.footer-connector-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* MAIN FOOTER CONTENT */
+.main-footer {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 80px 32px 0px;
+}
+
+.footer-grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 80px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  text-align: left;
+}
+
+.logo-pulse-dot {
+  width: 9px;
+  height: 9px;
+  background: #2563eb;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.9);
+}
+
+.footer-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-logo-text {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.footer-brand-desc {
+  font-size: 14.5px;
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 440px;
+}
+
+.footer-website-link {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2563eb;
+  transition: color 0.2s ease;
+}
+
+.footer-website-link:hover {
+  color: #60a5fa;
+}
+
+.footer-links-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  text-align: left;
+}
+
+.footer-col-title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+.footer-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links-list li a {
+  font-size: 14px;
+  color: #94a3b8;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.footer-links-list li a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* FOOTER BOTTOM CREDITS */
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 30px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.copyright-text, .powered-by {
+  font-size: 13.5px;
+  color: #475569;
+  font-weight: 600;
+}
+
+/* GIANT GRADIENT WATERMARK FADING IN FROM BOTTOM */
+.footer-giant-watermark-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+  user-select: none;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.footer-giant-watermark-text {
+  font-family: var(--font-heading);
+  font-size: clamp(80px, 20vw, 290px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 0.75;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.02) 0%, rgba(16, 185, 129, 0.45) 60%, rgba(37, 99, 235, 0.85) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.5s ease;
+}
+
+.footer-giant-watermark-wrapper:hover .footer-giant-watermark-text {
+  transform: translateY(-8px);
+}
+
+/* ===== MOBILE ADAPTABILITY ===== */
+@media (max-width: 1024px) {
+  .main-footer {
+    padding: 50px 16px 0px;
+  }
+
+  .footer-grid-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+
+  /* Center Brand/Logo details on Mobile */
+  .footer-brand-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Side-by-side links structure on Mobile for balanced look */
+  .footer-links-col {
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 24px;
+  }
+
+  .footer-col-title {
+    grid-column: span 2;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .footer-links-list {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .footer-links-list li a:hover {
+    transform: none; /* Disable horizontal slide on Mobile */
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 24px 0;
+  }
+
+  .copyright-text, .powered-by {
+    font-size: 12px;
+  }
+}

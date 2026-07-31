@@ -1,0 +1,125 @@
+/* ===== STYLISH TICKER STRIP (SCROLLING MARQUEE) ===== */
+.ticker-strip-wrapper {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(90deg, #1d4ed8, #6d28d9, #be185d, #1d4ed8);
+  background-size: 200% auto;
+  color: #ffffff;
+  padding: 22px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  /* Stylish Tilt & Scale to prevent gaps at edges */
+  transform: rotate(-2deg) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  margin: 40px 0; /* Add spacing so it doesn't overlap weirdly */
+  animation: bgPan 10s linear infinite;
+}
+
+@keyframes bgPan {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Optional gradient fade at edges */
+.ticker-strip-wrapper::before,
+.ticker-strip-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ticker-strip-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(29, 78, 216, 0.9), transparent);
+}
+
+.ticker-strip-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(190, 24, 93, 0.9), transparent);
+}
+
+/* The track holding all content */
+.ticker-strip-track {
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+  animation: scrollMarqueeRight 30s linear infinite;
+}
+
+/* Each block of repeated content */
+.ticker-content {
+  display: flex;
+  align-items: center;
+}
+
+/* Individual text items */
+.ticker-item {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0 40px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Make alternating items "hollow" / outlined for a modern aesthetic */
+.ticker-item:nth-child(even) {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #ffffff;
+  text-shadow: none;
+}
+
+/* Emphasize the stars/diamonds */
+.ticker-item::first-letter {
+  color: #fbbf24;
+  margin-right: 8px;
+  -webkit-text-stroke: 0px;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.8);
+}
+
+/* Moving right to left means translating from 0 to a negative offset */
+@keyframes scrollMarqueeRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.3333%);
+  }
+}
+
+/* Pause animation on hover */
+.ticker-strip-wrapper:hover .ticker-strip-track {
+  animation-play-state: paused;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .ticker-strip-wrapper {
+    padding: 16px 0;
+    transform: rotate(-3deg) scale(1.08);
+    margin: 30px 0;
+  }
+
+  .ticker-item {
+    font-size: 14px;
+    margin: 0 25px;
+    letter-spacing: 2px;
+  }
+  
+  .ticker-strip-wrapper::before,
+  .ticker-strip-wrapper::after {
+    width: 50px;
+  }
+}

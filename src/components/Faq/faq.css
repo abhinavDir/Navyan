@@ -1,0 +1,654 @@
+/* ===== STUDENT REVIEWS & FAQ SECTION - WARM CREAM BACKDROP ===== */
+.faq-phone-section.client-ui-bg {
+  position: relative;
+  padding: 100px 32px 120px;
+  background: #eae6db; /* Exact warm cream/beige background matching reference image */
+  color: #0f172a;
+  z-index: 5;
+  overflow: hidden;
+}
+
+/* Giant vertical rotated watermark matching reference UI */
+.faq-vertical-watermark {
+  position: absolute;
+  top: 50%;
+  left: -120px;
+  transform: translateY(-50%) rotate(-90deg);
+  font-family: var(--font-heading);
+  font-size: 190px;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.035);
+  letter-spacing: 20px;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+}
+
+.faq-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header matching Code Calibre layout */
+.faq-header-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Push title to align with right side cards */
+  max-width: 1100px;
+}
+
+.faq-header-content {
+  width: 100%;
+  max-width: 620px;
+  text-align: left;
+}
+
+.faq-giant-title-new {
+  font-family: var(--font-heading);
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.15;
+  color: #ea580c; /* Warm Orange title primary color */
+  letter-spacing: -1.2px;
+}
+
+.faq-giant-title-new .highlight-blue {
+  color: #2563eb; /* Code Calibre Electric Blue */
+}
+
+.faq-giant-title-new .highlight-orange {
+  color: #ea580c;
+}
+
+.faq-subtitle-new {
+  font-size: 17px;
+  color: #64748b;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* ===== CONTROLS BAR ===== */
+.faq-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+  gap: 20px;
+}
+
+.faq-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1.5px solid #d1d5db;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  width: 320px;
+  transition: all 0.3s ease;
+}
+
+.faq-search-box:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.1);
+}
+
+.faq-search-box svg {
+  color: #64748b;
+  margin-right: 8px;
+}
+
+.faq-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.faq-search-input::placeholder {
+  color: #94a3b8;
+}
+
+.clear-search-btn {
+  background: #f1f5f9;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 14px;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-category-pills {
+  display: flex;
+  gap: 8px;
+}
+
+.cat-pill-btn-new {
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.cat-pill-btn-new:hover {
+  background: #f1f5f9;
+}
+
+.cat-pill-btn-new.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+/* ===== 3D SLANTED SMARTPHONE & ACCORDION STAGE ===== */
+.faq-stage-wrapper-new {
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  gap: 45px;
+  width: 100%;
+  max-width: 1100px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* ===== LEFT 3D SLANTED PHONE MOCKUP ===== */
+.phone-mockup-container-new {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+}
+
+/* Floating 3D dialogue/hearts matching mockup */
+.floating-badge-new {
+  position: absolute;
+  z-index: 25;
+  pointer-events: none;
+  animation: floatBounceNew 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatBounceNew {
+  from { transform: translateY(0px) rotate(0deg); }
+  to { transform: translateY(-10px) rotate(2deg); }
+}
+
+/* 5 Star dialog box top left of phone */
+.badge-stars-new {
+  top: -15px;
+  left: 20px;
+  background: #2563eb;
+  border-radius: 12px;
+  padding: 8px 16px;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
+  border: 2px solid #ffffff;
+}
+
+.stars-gold-new {
+  color: #facc15;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+/* Thumbs up speech bubble top right */
+.badge-like-new-1 {
+  top: 35px;
+  right: 15px;
+  background: #2563eb;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+  border: 2.5px solid #ffffff;
+}
+
+/* Thumbs up speech bubble middle left */
+.badge-like-new-2 {
+  top: 240px;
+  right: -5px;
+  background: #2563eb;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
+  border: 2.5px solid #ffffff;
+}
+
+/* Red 3D heart spheres */
+.badge-heart-new-1 {
+  bottom: 80px;
+  left: 10px;
+  background: #ef4444;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3);
+  border: 2.5px solid #ffffff;
+}
+
+.badge-heart-new-2 {
+  bottom: 25px;
+  right: 10px;
+  background: #ef4444;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 12px 30px rgba(239, 68, 68, 0.35);
+  border: 3px solid #ffffff;
+}
+
+/* Slanted Smartphone frame matching perspective of Code Calibre */
+.phone-body-frame-new {
+  position: relative;
+  width: 295px;
+  height: 560px;
+  background: #111827;
+  border-radius: 38px;
+  border: 8px solid #374151;
+  box-shadow: 
+    -20px 25px 50px rgba(0, 0, 0, 0.15),
+    inset 0 0 15px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform: rotate(-7deg) skewY(2deg);
+  transition: transform 0.5s ease;
+}
+
+.phone-mockup-container-new:hover .phone-body-frame-new {
+  transform: rotate(-4deg) skewY(1deg) scale(1.02);
+}
+
+.phone-screen-notch-new {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 16px;
+  background: #374151;
+  border-radius: 999px;
+  z-index: 10;
+}
+
+/* Phone App Screen */
+.phone-app-screen-new {
+  padding: 34px 14px 14px;
+  background: #f8fafc;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-app-header-new {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 800;
+  color: #94a3b8;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+.phone-app-mockup-content {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mini-app-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 900;
+  color: #1e3a8a;
+}
+
+.mini-app-divider {
+  width: 40px;
+  height: 3px;
+  background: #ea580c;
+  border-radius: 999px;
+}
+
+.mini-app-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  border-left: 4px solid #2563eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.mini-app-num {
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 900;
+  color: #64748b;
+}
+
+.mini-app-q {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 4px 0;
+  line-height: 1.3;
+}
+
+.mini-app-a {
+  font-size: 11px;
+  color: #475569;
+  line-height: 1.45;
+}
+
+.mini-app-reviews-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.mini-stars {
+  color: #facc15;
+  font-size: 12px;
+}
+
+.mini-rating-label {
+  font-size: 10px;
+  font-weight: 900;
+  color: #64748b;
+}
+
+/* ===== RIGHT SIDE REVIEWS-STYLE ACCORDION CARDS ===== */
+.faq-review-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.no-faqs-found-new {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1.5px dashed #cbd5e1;
+  color: #64748b;
+}
+
+.faq-review-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px 24px 18px 36px; /* Extra left padding to clear the avatar */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.035);
+  cursor: pointer;
+  text-align: left;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* VERY SMALL OVERLAPPING AVATAR BADGE */
+.faq-card-avatar-small {
+  position: absolute;
+  left: -16px;
+  top: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 2px solid #ffffff;
+  z-index: 5;
+  transition: transform 0.25s ease;
+}
+
+.faq-review-card:hover .faq-card-avatar-small {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.avatar-num-text {
+  font-family: monospace;
+  font-size: 11px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+/* DEEP / MUTED MULTIPLE COLOR THEMES (NOT BRIGHT) */
+/* 1. Deep Muted Cyber Pink Card */
+.faq-review-card.card-theme-pink {
+  background: #701a35; /* Muted Dark Red/Pink */
+  color: #fff1f2;
+}
+.faq-review-card.card-theme-pink .faq-card-avatar-small { background: #be185d; }
+.faq-review-card.card-theme-pink .faq-card-question-title { color: #ffe4e6; }
+.faq-review-card.card-theme-pink .faq-card-answer-text { color: #fecdd3; }
+
+/* 2. Deep Muted Navy Blue Card */
+.faq-review-card.card-theme-blue {
+  background: #172554; /* Muted Deep Blue */
+  color: #eff6ff;
+}
+.faq-review-card.card-theme-blue .faq-card-avatar-small { background: #1d4ed8; }
+.faq-review-card.card-theme-blue .faq-card-question-title { color: #dbeafe; }
+.faq-review-card.card-theme-blue .faq-card-answer-text { color: #bfdbfe; }
+
+/* 3. Deep Muted Olive Card */
+.faq-review-card.card-theme-olive {
+  background: #14532d; /* Muted Deep Olive */
+  color: #f7fee7;
+}
+.faq-review-card.card-theme-olive .faq-card-avatar-small { background: #15803d; }
+.faq-review-card.card-theme-olive .faq-card-question-title { color: #dcfce7; }
+.faq-review-card.card-theme-olive .faq-card-answer-text { color: #bbf7d0; }
+
+/* 4. Deep Muted Terracotta Orange Card */
+.faq-review-card.card-theme-orange {
+  background: #7c2d12; /* Muted Burnt Orange */
+  color: #fff7ed;
+}
+.faq-review-card.card-theme-orange .faq-card-avatar-small { background: #c2410c; }
+.faq-review-card.card-theme-orange .faq-card-question-title { color: #ffedd5; }
+.faq-review-card.card-theme-orange .faq-card-answer-text { color: #fed7aa; }
+
+/* Interactions */
+.faq-review-card:hover {
+  transform: translateX(8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.faq-review-card.is-open {
+  transform: translateX(12px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
+}
+
+.faq-card-body-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.faq-card-header-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.faq-card-question-title {
+  font-family: var(--font-heading);
+  font-size: 17.5px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.faq-card-stars {
+  color: #facc15;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+/* Card Answer Expand Container */
+.faq-card-answer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-card-answer-text {
+  font-size: 13.5px;
+  line-height: 1.55;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* Feedback Row */
+.helpful-feedback-box-new {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-top: 6px;
+}
+
+.helpful-label-new {
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.helpful-btns-new {
+  display: flex;
+  gap: 6px;
+}
+
+.feedback-btn-new {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 10px;
+  font-weight: 800;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.feedback-btn-new:hover {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.feedback-btn-new.voted-yes {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: #ffffff;
+}
+
+.feedback-btn-new.voted-no {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #ffffff;
+}
+
+.thanks-msg-new {
+  font-size: 10px;
+  font-weight: 900;
+  color: #22c55e;
+}
+
+/* ===== MOBILE ADAPTABILITY ===== */
+@media (max-width: 1024px) {
+  .faq-phone-section.client-ui-bg {
+    padding: 70px 16px 80px;
+  }
+
+  .faq-giant-title-new {
+    font-size: 32px;
+  }
+
+  .faq-subtitle-new {
+    font-size: 14.5px;
+  }
+
+  .faq-controls-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .faq-search-box {
+    width: 100%;
+  }
+
+  .faq-stage-wrapper-new {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .phone-body-frame-new {
+    width: 280px;
+    height: 520px;
+    transform: rotate(0deg) skewY(0deg); /* Straighten phone on mobile for better visibility */
+  }
+
+  .faq-review-card {
+    padding: 16px 16px 16px 28px;
+  }
+
+  .faq-card-avatar-small {
+    left: -12px;
+    top: 16px;
+  }
+
+  .faq-card-question-title {
+    font-size: 15px;
+  }
+
+  .faq-card-answer-text {
+    font-size: 12.5px;
+  }
+}
