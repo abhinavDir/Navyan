@@ -61,7 +61,8 @@
 .howitworks-bg-glow.glow-left {
   top: 15%;
   left: -100px;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: 500px;
   background: radial-gradient(circle, rgba(249, 115, 22, 0.2) 0%, transparent 70%);
 }
@@ -69,13 +70,15 @@
 .howitworks-bg-glow.glow-right {
   bottom: 15%;
   right: -100px;
-  width: 550px;
+  width: 100%;
+  max-width: 550px;
   height: 550px;
   background: radial-gradient(circle, rgba(234, 88, 12, 0.2) 0%, transparent 70%);
 }
 
 .howitworks-container {
-  max-width: 1320px;
+  max-width: 100%;
+max-width: 1320px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -94,7 +97,8 @@
   align-items: center;
   justify-content: center;
   gap: 14px;
-  max-width: 850px;
+  max-width: 100%;
+max-width: 850px;
   margin: 0 auto;
 }
 
@@ -138,7 +142,8 @@
   color: #ea580c;
   font-weight: 800;
   line-height: 1.5;
-  max-width: 700px;
+  max-width: 100%;
+max-width: 700px;
 }
 
 /* ===== 3D COVERFLOW STAGE WRAPPER ===== */
@@ -191,7 +196,8 @@
 .coverflow-deck-stage {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
+max-width: 1200px;
   height: 530px;
   display: flex;
   align-items: center;
@@ -206,7 +212,8 @@
   position: absolute;
   left: calc(50% - 165px);
   top: calc(50% - 250px);
-  width: 330px;
+  width: 100%;
+  max-width: 330px;
   height: 500px;
   border-radius: 28px;
   background: var(--card-bg-gradient);

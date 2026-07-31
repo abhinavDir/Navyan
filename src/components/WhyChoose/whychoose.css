@@ -20,13 +20,15 @@
 }
 
 .orbital-pulse-ring.ring-outer {
-  width: 920px;
+  width: 100%;
+  max-width: 920px;
   height: 920px;
   animation: pulseRotate 45s linear infinite;
 }
 
 .orbital-pulse-ring.ring-inner {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   height: 600px;
   animation: pulseRotate 28s linear infinite reverse;
 }
@@ -42,7 +44,8 @@
 }
 
 .whychoose-container {
-  max-width: 1380px;
+  max-width: 100%;
+max-width: 1380px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -59,7 +62,8 @@
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  max-width: 800px;
+  max-width: 100%;
+max-width: 800px;
 }
 
 .whychoose-tagline {
@@ -100,14 +104,16 @@
   color: #475569;
   font-weight: 600;
   line-height: 1.6;
-  max-width: 680px;
+  max-width: 100%;
+max-width: 680px;
 }
 
 /* ===== ORBITAL STAGE WRAPPER ===== */
 .orbital-stage-wrapper {
   position: relative;
   width: 100%;
-  max-width: 1360px;
+  max-width: 100%;
+max-width: 1360px;
   min-height: 600px;
   margin-top: 10px;
 }
@@ -129,7 +135,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: 580px;
   display: flex;
   align-items: flex-end;
@@ -140,7 +147,8 @@
 .student-glow-backdrop {
   position: absolute;
   bottom: 0;
-  width: 420px;
+  width: 100%;
+  max-width: 420px;
   height: 420px;
   background: radial-gradient(circle, rgba(37, 99, 235, 0.18) 0%, transparent 70%);
   border-radius: 50%;
@@ -458,7 +466,8 @@
   }
 
   .orbital-pulse-ring.ring-outer {
-    width: 360px;
+    width: 100%;
+    max-width: 360px;
     height: 360px;
   }
 

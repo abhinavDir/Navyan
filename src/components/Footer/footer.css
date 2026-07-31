@@ -26,7 +26,8 @@
 /* MAIN FOOTER CONTENT */
 .main-footer {
   position: relative;
-  max-width: 1240px;
+  max-width: 100%;
+max-width: 1240px;
   margin: 0 auto;
   padding: 80px 32px 0px;
 }
@@ -72,7 +73,8 @@
   font-size: 14.5px;
   color: #94a3b8;
   line-height: 1.6;
-  max-width: 440px;
+  max-width: 100%;
+max-width: 440px;
 }
 
 .footer-website-link {

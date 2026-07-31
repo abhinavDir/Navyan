@@ -26,7 +26,8 @@
 }
 
 .programs-container {
-  max-width: 1240px;
+  max-width: 100%;
+max-width: 1240px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -43,7 +44,8 @@
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  max-width: 950px;
+  max-width: 100%;
+max-width: 950px;
 }
 
 .programs-tagline {
@@ -84,7 +86,8 @@
   color: #cbd5e1;
   font-weight: 600;
   line-height: 1.6;
-  max-width: 780px;
+  max-width: 100%;
+max-width: 780px;
 }
 
 /* ---- PROGRAM CARDS GRID ---- */
@@ -363,7 +366,8 @@
   .programs-premium-card {
     flex: 0 0 84vw;
     width: 84vw;
-    max-width: 310px;
+    max-width: 100%;
+max-width: 310px;
     scroll-snap-align: center;
     min-height: 490px;
     transform: none !important;
